@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa|Roboto" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="/css/stylesheet.css"/>
+    <meta charset="utf-8"; name="viewport"; content="width=device-width, initial-scale=1, user-scalable=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+      $(function (){
+        $('#calendar').datepicker({
+          inline: true,
+          firstDay: 1,
+          showOtherMonths: true,
+          dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+        })
+      });
+    </script>
+
+  <title>test</title>
+</head>
+<body>
+
+  <div class="container-fluid">
+    <div id="Top">
+      <p id="currentMonth"></p>
+      <p id="currentDate"></p>
+      <script>
+        var d= new Date();
+        var monthsNames = ['January', 'Febuary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        document.getElementById("currentDate").innerHTML = d.getDate();
+        document.getElementById("currentMonth").innerHTML = monthsNames[d.getMonth()];
+      </script>
+      <script>
+       function slideLeftFunction() {
+         $('#calendar').animate ({
+           right: '950px'
+         });
+       };
+      </script>
+
+      <script>
+       function slideRightFunction() {
+         $('#calendar').animate ({
+           right: '0px'
+         });
+       };
+      </script>
+    </div>
+    <div id="Middle">
+
+      <div id="calendar">
+        <p> All Readings </p>
+      </div>
+
+      <div id="versesToday">
+        <ul id="versesList">
+        </ul>
+        <script>
+          var verses = [];
+          var data = ["verse1", "verse2", "verse3"];
+          $.each(data, function(i, verse){
+            verses.push('<li>' + verse + '</li>');
+
+          });
+          $('#versesList').append(verses.join(''));
+        </script>
+      </div>
+
+    </div>
+
+    <div id="Buttons">
+      <button class="btn btn-primary btn-lg" type="button" id="Bottom-Left" onclick="slideLeftFunction()">
+        buttonLeft
+      </button>
+      <script>document.getElementById(Bottom-Left).innerHTML = function() {slideLeftFunction()}</script>
+
+      <button class="btn btn-primary btn-lg" type="button" id="Bottom-Right" onclick="slideRightFunction()">
+        buttonRight
+      </button>
+        <script>document.getElementById(Bottom-Right).innerHTML = function() {slideRightFunction()}</script>
+    </div>
+  </div>
+</body>
+</html>
