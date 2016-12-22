@@ -97,7 +97,20 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+#versesToday {
+  position: relative;
+  left: 950px;
+  height: 80%;
+  width: 90%;
+  bottom: 41%;
+}
 
+#versesToday li{
+  position: relative;
+  color: black;
+  font-size: 40pt;
+  font-family: 'Roboto', sans-serif;
+}
 
 .ui-datepicker {
   position: relative;

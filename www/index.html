@@ -45,7 +45,7 @@
       </script>
       <script>
        function slideLeftFunction() {
-         $('#calendar').animate ({
+         $('.moving').animate ({
            right: '950px'
          });
        };
@@ -53,7 +53,7 @@
 
       <script>
        function slideRightFunction() {
-         $('#calendar').animate ({
+         $('.moving').animate ({
            right: '0px'
          });
        };
@@ -61,16 +61,16 @@
     </div>
     <div id="Middle">
 
-      <div id="calendar">
+      <div id="calendar" class='moving'>
         <p> All Readings </p>
       </div>
 
-      <div id="versesToday">
+      <div id="versesToday" class='moving'>
         <ul id="versesList">
         </ul>
         <script>
           var verses = [];
-          var data = ["YES", "verse2", "verse3"];
+          var data = ["verse1", "verse2", "verse3"];
           $.each(data, function(i, verse){
             verses.push('<li>' + verse + '</li>');
 
