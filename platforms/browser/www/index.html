@@ -66,7 +66,7 @@
       </div>
 
       <div id="versesToday" class='moving'>
-        <ul id="versesList" class='moving'>
+        <ul id="versesList">
         </ul>
         <script>
           var verses = [];
@@ -85,12 +85,12 @@
       <button class="btn btn-primary btn-lg" type="button" id="Bottom-Left" onclick="slideLeftFunction()">
         buttonLeft
       </button>
-      <script>document.getElementById(Bottom-Left).innerHTML = function() {slideLeftFunction()}</script>
+      <script>document.getElementById('#Bottom-Left').innerHTML = function() {slideLeftFunction()}</script>
 
       <button class="btn btn-primary btn-lg" type="button" id="Bottom-Right" onclick="slideRightFunction()">
         buttonRight
       </button>
-        <script>document.getElementById(Bottom-Right).innerHTML = function() {slideRightFunction()}</script>
+        <script>document.getElementById('#Bottom-Right').innerHTML = function() {slideRightFunction()}</script>
     </div>
   </div>
 </body>
